@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de estudiantes – SC-502</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Registro de estudiantes</h1>
+    <p>SC-502 Ambiente Web Cliente Servidor · Estudio de caso 1</p>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Agregar estudiante</h2>
+      <form id="formEstudiante" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="off">
+        </div>
+        <div class="campo">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos" autocomplete="off">
+        </div>
+        <div class="campo">
+          <label for="nota">Nota (0 a 100)</label>
+          <input type="number" id="nota" name="nota" min="0" max="100" step="any">
+        </div>
+        <button type="submit" class="btn">Agregar estudiante</button>
+      </form>
+      <p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-tabla">
+      <h2 id="titulo-tabla">Lista de estudiantes</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <caption class="solo-lectores">Estudiantes registrados con su nota</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Nota</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEstudiantes"></tbody>
+        </table>
+      </div>
+      <p class="leyenda">
+        <span class="muestra nota-alta"></span> 80 o más
+        <span class="muestra nota-baja"></span> menor a 65
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-resumen">
+      <h2 id="titulo-resumen">Resumen de notas</h2>
+      <dl class="resumen">
+        <div><dt>Mayor nota</dt><dd id="resMayor"></dd></div>
+        <div><dt>Promedio</dt><dd id="resPromedio"></dd></div>
+        <div><dt>Nota más baja</dt><dd id="resMenor"></dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Estudio de caso 1 · Universidad Fidélitas</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
